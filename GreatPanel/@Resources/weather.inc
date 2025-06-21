@@ -4,7 +4,6 @@
 
 [MeasureWeatherJSON]
 Measure=WebParser
-UpdateRate=900
 URL=#URL#
 RegExp=#Regex#
 FinishAction=[!HideMeterGroup ErrorMeters][!ShowMeterGroup DisplayMeters]
@@ -19,11 +18,6 @@ Measure=WebParser
 URL=[MeasureWeatherJSON]
 StringIndex=5
 
-[MeasureTemperatureRessentie]
-Measure=WebParser
-URL=[MeasureWeatherJSON]
-StringIndex=6
-
 [MeasureDec]
 Measure=WebParser
 URL=[MeasureWeatherJSON]
@@ -35,12 +29,6 @@ Formula=Round([MeasureTemperature:])
 ; Les ':' forcent la conversion numérique
 DynamicVariables=1
 
-[MeasureTempRessentieRounded]
-Measure=Calc
-Formula=Round([MeasureTemperatureRessentie:])
-; Les ':' forcent la conversion numérique
-DynamicVariables=1
-
 ;==============
 ;== Meters ==
 ;==============
@@ -49,7 +37,7 @@ DynamicVariables=1
 [MeterErrorIcon]
 Meter=Image
 Group=ErrorMeters
-ImageName=#@#Images\Meteo\unknown.png
+ImageName=#@#Images\Meteo\light\unknown.png
 X=230
 Y=110
 W=35
@@ -62,7 +50,7 @@ Meter=Image
 Group=DisplayMeters
 MeasureName=MeasureIconCode
 ImageName=[MeasureIconCode].png
-ImagePath=#@#Images\Meteo\
+ImagePath=#@#Images\Meteo\light
 X=230
 Y=110
 W=35
@@ -97,17 +85,3 @@ X=0r
 Y=15r
 AntiAlias=1
 DynamicVariables=1
-
-;[MeterRessentie]
-;Meter=String
-;MeasureName=MeasureTempRessentieRounded
-;Group=DisplayMeters
-;FontFace=#Font#
-;FontSize=10
-;FontColor=179,179,179,255
-;Text="%1 Ressentie"
-;StringAlign=center
-;X=200
-;Y=135
-;AntiAlias=1
-;DynamicVariables=1
