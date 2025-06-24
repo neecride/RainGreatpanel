@@ -1,3 +1,6 @@
+[Variables]
+@IncludeVariables=#@#variables.inc
+
 ; --- Musique ---
 
 ; ---------- MESURES ITUNES ----------
@@ -48,6 +51,13 @@ PlayerName=[MeasurePlayer]
 PlayerType=ALBUM
 Substitute="":"Album inconnu"
 
+[mStateButton]
+Measure=PLUGIN
+Plugin=NowPlaying.dll
+PlayerName=[MeasurePlayer]
+PlayerType=STATE
+Substitute="0":"play.png","1":"pause.png","2":"play.png"
+
 
 ; --- AFFICHAGE COVER ---
 [MeasureCover]
@@ -90,8 +100,8 @@ Meter=String
 MeasureName=MeasureTitle
 FontFace=#font#
 FontSize=18
-FontColor=255,255,255
-X=80
+FontColor=179,179,179,255
+X=85
 Y=340
 W=140
 H=22
@@ -105,7 +115,7 @@ MeasureName=MeasureArtist
 FontFace=#font#
 FontSize=15
 FontColor=46,50,97,255
-X=80
+X=0r
 Y=23r
 W=150
 ClipString=2
@@ -118,8 +128,8 @@ MeasureName=MeasurePosition
 MeasureName2=MeasureDuration
 FontFace=#font#
 FontSize=10
-FontColor=180,180,180
-X=80
+FontColor=179,179,179,255
+X=0r
 Y=23r
 Text="%1 / %2"
 StringAlign=Center
@@ -138,7 +148,7 @@ AntiAlias=1
 
 [MeterPlayPause]
 Meter=Image
-ImageName=#@#/Images/play.png
+ImageName=#@#Images/[mStateButton]
 X=73
 Y=283
 W=20
