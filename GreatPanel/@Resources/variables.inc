@@ -15,11 +15,11 @@ MinHeight=0.24
 Padding=3,3,3,3
 theme=light ; theme meteo
 DefaultCover=#@#/Images/player/default.png
-APIKey=1e5071d0fcf050f8bb1e062e5a54eab3
+APIKey=yourapikey ; creat account here https://openweathermap.org/api
 Unites=metric
 DynamicVariables=1
 UpdateRate=600
-Country=Cambrai
+Country=Paris
 MaskCal=0
 ChooseAvatar=0
 BackgroundChoice=0
@@ -27,3 +27,4 @@ Lang=Fr
 PlayerName=iTunes
 URL=https://api.openweathermap.org/data/2.5/weather?q=#Country#&appid=#APIKey#&lang=#Lang#&units=#Unites#
 Regex=(?siU).*"weather":\[\{.*?"id":(\d+).*?"main":"(.*?)".*?"description":"(.*?)".*?"icon":"(.*?)".*?\}\],.*?"main":\{.*?"temp":([-]?\d+\.?\d*),.*?"feels_like":([-]?\d+\.?\d*),.*?"humidity":(\d+).*?\}.*?"wind":\{.*?"speed":([-]?\d+\.?\d*).*?\}.*?"name":"([^"]+)"
+
